@@ -1,0 +1,48 @@
+<div class="card mat-elevation-z5 text-center">
+  <h2>Update Profile</h2>
+  <div class="profile-image">
+    <img
+      width="120"
+      height="120"
+      class="margin- mat-elevation-z1"
+      [src]="currentUser()?.['photoURL'] ?? 'image-placeholder.png'"
+    />
+    <button mat-mini-fab (click)="inputField.click()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <input #inputField type="file" hidden (change)="uploadFile($event)" />
+  <hr />
+  <hr class="hr-invis" />
+  <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Display Name</mat-label>
+        <input matInput formControlName="displayName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input type="number" matInput formControlName="phone" />
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" />
+    </mat-form-field>
+    <div class="center margin-top">
+      <button type="submit" mat-raised-button color="primary">
+        Save Changes
+      </button>
+    </div>
+  </form>
+</div>

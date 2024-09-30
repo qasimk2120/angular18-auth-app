@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+mat-error{
+    color: red;
+    margin-bottom: 3px;
+}
+.sign-up-footer{
+    margin-top: 32px;
+    text-align: end;
+
+    .login{
+        font-size: 1rem;
+    }
+
+    a{
+        cursor: pointer;
+        text-decoration: underline;
+        color: darkblue
+    }
+}
+
+.separator{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.social-sign-in{
+    cursor: pointer;
+}

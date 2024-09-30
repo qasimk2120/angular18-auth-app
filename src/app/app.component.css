@@ -1,0 +1,11 @@
+.container {
+    padding: 24px;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+.home-link{
+    text-decoration: none;
+    color: white;
+}

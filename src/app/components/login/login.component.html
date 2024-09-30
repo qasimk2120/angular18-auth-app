@@ -1,0 +1,39 @@
+<div class="card mat-elevation-z5">
+  <h1>
+    Login
+    <hr />
+  </h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field>
+      <mat-label>Email Address</mat-label>
+      <input type="email" formControlName="email" matInput />
+      @if(email?.hasError('required')){
+      <mat-error>Email is required</mat-error>
+      } @if(email?.hasError('email')){
+      <mat-error>Email should be valid email</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" formControlName="password" matInput />
+      @if(password?.hasError('required')){
+      <mat-error>Password is required</mat-error>
+      } @if(password?.hasError('minlength')){
+      <mat-error
+        >Please Enter a password that is at least 6 characters</mat-error
+      >
+      }
+    </mat-form-field>
+    <div class="center margin-top">
+      <button type="submit" mat-raised-button color="primary">Login</button>
+    </div>
+    <p class="separator">-- OR --</p>
+    <div class="center">
+        <img class="social-sign-in"  role="button" src="google-sign-in.png" width="50%" (click)="googleSignIn()"/>
+    </div>
+    <div class="login-footer">
+      <a class="sign-up" routerLink="/signup"> Create Account!</a>
+      <a (click)="forgotPassword()" class="sign-up-link"> Forgot Password!</a>
+    </div>
+  </form>
+</div>

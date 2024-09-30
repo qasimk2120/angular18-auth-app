@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <a class="home-link" routerLink="/" >Angular Sign up App </a> 
+  @if(!currentUser()){
+    <button mat-button routerLink="/signup">Sign Up</button>
+    <button mat-button routerLink="/login">Login</button>
+  }
+  @if(currentUser()){
+  <button mat-button routerLink="/home"><mat-icon>home</mat-icon></button>
+  <button mat-button [mat-menu-trigger-for]="userMenu">{{ currentUser()?.['displayName'] }}
+    <mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item routerLink="/profile">
+      <mat-icon>person</mat-icon>
+      Profile
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </mat-menu>
+  }
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+  @if(loading()){
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  }
+</div>
