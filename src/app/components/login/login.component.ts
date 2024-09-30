@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { NotificationService } from '../../services/notification.service';
 import { UsersService } from '../../services/users.service';
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -16,6 +17,7 @@ import { UsersService } from '../../services/users.service';
     MatButtonModule,
     ReactiveFormsModule,
     RouterModule,
+    MatIcon
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',

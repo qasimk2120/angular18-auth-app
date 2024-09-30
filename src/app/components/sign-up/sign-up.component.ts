@@ -9,6 +9,7 @@ import { passwordsMathValidators } from '../../utlities/password-validator';
 import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../services/notification.service';
 import { UsersService } from '../../services/users.service';
+import { MatIcon } from '@angular/material/icon';
 
 
 
@@ -22,7 +23,8 @@ import { UsersService } from '../../services/users.service';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    MatIcon
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',

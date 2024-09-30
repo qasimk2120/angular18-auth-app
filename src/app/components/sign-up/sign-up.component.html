@@ -9,7 +9,7 @@
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" />
       @if(name?.hasError('required')){
-      <mat-error>Name is Required</mat-error>
+      <mat-error><mat-icon>information</mat-icon> Name is Required</mat-error>
       }
     </mat-form-field>
 
@@ -17,33 +17,27 @@
       <mat-label>Email Address</mat-label>
       <input type="email" matInput formControlName="email" />
       @if(email?.hasError('required')){
-      <mat-error>Email is Required</mat-error>
+      <mat-error><mat-icon>information</mat-icon> Email is Required</mat-error>
       } @if(email?.hasError('email')) {
-      <mat-error>Please enter a valid email address</mat-error>
+      <mat-error><mat-icon>information</mat-icon> Please enter a valid email address</mat-error>
       }
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
       <input type="password" matInput formControlName="password" />
       @if(password?.hasError('required')){
-      <mat-error>Password is Required</mat-error>
+      <mat-error><mat-icon>information</mat-icon> Password is Required</mat-error>
       } @if(password?.hasError('minlength')) {
-      <mat-error>Password should be at least 6 characters long</mat-error>
+      <mat-error><mat-icon>information</mat-icon> Password should be at least 6 characters long</mat-error>
       }
     </mat-form-field>
     <mat-form-field>
       <mat-label>Confirm Password</mat-label>
       <input type="password" matInput formControlName="confirmPassword" />
-      @if(password?.hasError('required')){
-      <mat-error
-        >Confirm Password is Required, Make sure it matches the
-        Password</mat-error
-      >
-      }
     </mat-form-field>
 
     @if(signUpForm.hasError('passwordsDontMatch')){
-    <mat-error>Password and Confirm Password should Match</mat-error>
+    <mat-error><mat-icon>information</mat-icon> Password and Confirm Password should Match</mat-error>
     }
     <div class="center margin-top">
       <button type="submit" mat-raised-button color="primary">Sign Up</button>
@@ -60,8 +54,8 @@
     </div>
     <div class="sign-up-footer">
       <p>
-        Already have an Account? Login
-        <a class="login" routerLink="/login">here</a>!
+        Already have an Account? 
+        <a class="login" routerLink="/login">Login Here!</a>
       </p>
     </div>
   </form>
